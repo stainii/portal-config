@@ -21,8 +21,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
+        <!-- default parameters used in the application. Override these with a Maven profile -->
+        <eureka.server.uri>http://localhost:8761</eureka.server.uri>
+
         <java.version>1.8</java.version>
-        <maven.resources.plugin.version>3.0.2</maven.resources.plugin.version>
         <maven.war.plugin.version>3.0.0</maven.war.plugin.version>
     </properties>
 
@@ -74,7 +76,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
-                <version>${maven.resources.plugin.version}</version>
+                <version>3.0.2</version>
             </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -86,6 +88,9 @@
     <profiles>
         <profile>
             <id>production</id>
+            <properties>
+                <eureka.server.uri>http://portal-eureka:8761</eureka.server.uri>
+            </properties>
             <build>
                 <plugins>
                     <plugin>
