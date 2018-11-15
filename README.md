@@ -3,3 +3,7 @@
 
 Spring Boot config server which exposes general config of the portal.
 This general config is defined at [github.com/stainii/portal-config-data](https://www.github.com/stainii/portal-config-data).
+
+| Name | Example value | Description | Required? |
+| ---- | ------------- | ----------- | -------- |
+| JAVA_OPTS_PORTAL_CONFIG | -Xmx400m -Xms400m | Java opts you want to pass to the JVM | optional
